@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';*/
 import { Navbar, NavbarBrand } from 'reactstrap';
 import './App.css';
 
@@ -7,9 +7,7 @@ function App() {
     <div className="App">
       <Navbar dark color="primary">
         <div className="container">
-          <NavbarBrand href="/">
-            Ristorante Con Fusion
-          </NavbarBrand>
+          <NavbarBrand href="/">Ristorante Con Fusion :D</NavbarBrand>
         </div>
       </Navbar>
     </div>
