@@ -18,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        {/*<h2>It is {new Date().toLocaleTimeString()}.</h2>*/}
         <Navbar dark color="primary">
           <div className="container">
             <NavbarBrand href="/">Ristorante Con Fusion :D</NavbarBrand>
