@@ -38,7 +38,7 @@ class DishDetail extends Component{
                     return (
                         <ListGroupItem className="border-0">
                             {comment.comment}<br />
-                            --{comment.author}
+                            --{comment.author},{new Intl.DateTimeFormat('en-US',{year: 'numeric', month: 'short', day: '2-digit'}).format( new Date(Date.parse(comment.date)))}
                         </ListGroupItem>
                     );
                     })}
