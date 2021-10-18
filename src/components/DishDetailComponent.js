@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, ListGroup, ListGroupItem} from 'reactstrap';
+import React from 'react';
+import { Card, CardImg, CardText, CardBody, CardTitle, ListGroup, ListGroupItem} from 'reactstrap';
 
 /*class DishDetail extends Component{
     constructor(props){
