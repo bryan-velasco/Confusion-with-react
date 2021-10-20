@@ -1,49 +1,52 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle} from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import DishDetail from './DishDetailComponent';
+import { Link } from 'react-router-dom';
 
 //class Menu extends Component {
-    /*constructor(props) {
-        super(props);
-        console.log('Menu Component constructor is invoked');
-    }*/
+/*constructor(props) {
+    super(props);
+    console.log('Menu Component constructor is invoked');
+}*/
 
-    /*componentDidMount(){
-        console.log('Menu Component componentDidMount is invoked');
-    }*/
+/*componentDidMount(){
+    console.log('Menu Component componentDidMount is invoked');
+}*/
 
-    /*renderDish(dish){
-        if(dish != null){
-            return(
-                <Card>
-                    <CardImg width="100%" className="img-fluid img-thumbnail" src={dish.image} alt={dish.name} />
-                    <CardBody>
-                        <CardTitle>{dish.name}</CardTitle>
-                        <CardText>{dish.description}</CardText>
-                    </CardBody>
-                </Card>
-            );
-        }else{
-            return(
-                <div></div>
-            );
-        }
-    }*/
+/*renderDish(dish){
+    if(dish != null){
+        return(
+            <Card>
+                <CardImg width="100%" className="img-fluid img-thumbnail" src={dish.image} alt={dish.name} />
+                <CardBody>
+                    <CardTitle>{dish.name}</CardTitle>
+                    <CardText>{dish.description}</CardText>
+                </CardBody>
+            </Card>
+        );
+    }else{
+        return(
+            <div></div>
+        );
+    }
+}*/
 
-    //render() {
+//render() {
 
-function RenderMenuItem({dish, onClick}){
+function RenderMenuItem({ dish }) {
     return (
-        <Card onClick={() => onClick(dish.id)}>
-            <CardImg width="100%" className="img-fluid img-thumbnail" src={dish.image} alt={dish.name} />
-            <CardImgOverlay className="col-9">
-                <CardTitle>{dish.name}</CardTitle>
-            </CardImgOverlay>
+        <Card>
+            <Link to={`/menu/${dish.id}`}>
+                <CardImg width="100%" className="img-fluid img-thumbnail" src={dish.image} alt={dish.name} />
+                <CardImgOverlay className="col-9">
+                    <CardTitle>{dish.name}</CardTitle>
+                </CardImgOverlay>
+            </Link>
         </Card>
     );
 }
 
-const Menu = (props) =>{
+const Menu = (props) => {
     const menu = props.dishes.map((dish) => {
         return (
             /*<div key={dish.id} className="col-12 mt-5">
@@ -59,7 +62,7 @@ const Menu = (props) =>{
                 </Media>
             </div>*/
             <div key={dish.id} className="col-12 col-md-5 mt-5">
-                <RenderMenuItem dish={dish} onClick={props.onClick} />
+                <RenderMenuItem dish={dish} />
             </div>
         );
     });
@@ -68,6 +71,18 @@ const Menu = (props) =>{
 
     return (
         <div className="container">
+            <div className="row">
+                <Breadcrumb>
+                    <BreadcrumbItem><Link to={`/home`}>Home</Link></BreadcrumbItem>
+                    <BreadcrumbItem active>
+                        Menu
+                    </BreadcrumbItem>
+                </Breadcrumb>
+                <div className="col-12">
+                    <h3>Menu</h3>
+                    <hr />
+                </div>
+            </div>
             <div className="row">
                 {menu}
             </div>
@@ -78,8 +93,8 @@ const Menu = (props) =>{
         </div>
     );
 }
-       
-    //}
+
+//}
 //}
 
 export default Menu;
