@@ -1,6 +1,7 @@
 
 import Menu from './MenuComponent';
 import Home from './HomeComponent';
+import About from './AboutComponent';
 import Contact from './ContactComponent';
 import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
@@ -58,6 +59,7 @@ class Main extends Component {
                 {/*<h2>It is {new Date().toLocaleTimeString()}.</h2>*/}
                 <Switch>
                     <Route path='/home' component={HomePage} />
+                    <Route path='/aboutus' component={() => <About leaders={this.state.leaders}/> } />
                     <Route exact path="/menu" component={() => <Menu dishes={this.state.dishes} />} />
                     <Route path="/menu/:dishId" component={DishWithId} />
                     <Route exact path="/contactus" component={Contact} />
